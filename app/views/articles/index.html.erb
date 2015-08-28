@@ -1,0 +1,21 @@
+<h1>Listing articles</h1>
+<h2><%= link_to ' បង្កើតអត្ថបទថ្មី', new_article_path, class: 'glyphicon glyphicon-ok btn btn-primary' %></h2>
+<table class="table">
+  <tr>
+    <th>ចំនងជើង</th>
+    <th>អត្ថបទ</th>
+    <th colspan="3"></th>
+  </tr>
+
+  <% @articles.each do |article| %>
+    <tr>
+      <td><%= article.title %></td>
+      <td><%= article.text %></td>
+      <td><%= link_to ' បង្ហាញ', article_path(article), class: 'glyphicon glyphicon-folder-open btn btn-primary'%></td>
+      <td><%= link_to ' កែប្រែ', edit_article_path(article), class: 'glyphicon glyphicon-pencil btn btn-info' %></td>
+      <td><%= link_to ' លុប', article_path(article),
+              method: :delete,
+              data: { confirm: 'តើអ្នកចងប់លុបឬ?' },class: 'glyphicon glyphicon-minus btn btn-danger' %></td>
+    </tr>
+  <% end %>
+</table>

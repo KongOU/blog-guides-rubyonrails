@@ -1,0 +1,18 @@
+<h1 class="row">
+  <strong class="col-md-5">ចំនងជើង:</strong>
+  <%= @article.title %>
+</h1>
+
+<h1 class="row">
+  <strong class="col-md-5">អត្ថបទ:</strong>
+  <%= @article.text %>
+</h1>
+
+<h3>Comments</h3>
+<%= render @article.comments %>
+
+<h3>Add a comment:</h3>
+<%= render 'comments/form' %>
+
+<%= link_to 'កែប្រែ', edit_article_path(@article), class: 'btn btn-info' %> |
+<%= link_to 'ត្រលប់', articles_path, class: 'btn btn-info' %>
